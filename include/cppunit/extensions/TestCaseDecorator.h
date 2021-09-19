@@ -19,15 +19,15 @@ class CPPUNIT_API TestCaseDecorator : public TestCase
 {
 public:
   TestCaseDecorator( TestCase *test );
-  ~TestCaseDecorator();
+  ~TestCaseDecorator() override;
 
-  std::string getName() const;
+  std::string getName() const override;
 
-  void setUp();
+  void setUp() override;
 
-  void tearDown();
+  void tearDown() override;
 
-  void runTest();
+  void runTest() override;
 
 protected:
   TestCase *m_test;

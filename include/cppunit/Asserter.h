@@ -48,13 +48,13 @@ struct Asserter
   /*! \brief Throws a Exception with the specified message and location.
    */
   [[noreturn]] static void CPPUNIT_API fail( const Message &message, 
-                                const SourceLine &sourceLine = SourceLine() );
+                                             const SourceLine &sourceLine = SourceLine() );
 
   /*! \brief Throws a Exception with the specified message and location.
    * \deprecated Use fail( Message, SourceLine ) instead.
    */
-  [[noreturn]] static void CPPUNIT_API fail( std::string message, 
-                                const SourceLine &sourceLine = SourceLine() );
+  [[noreturn]] [[deprecated]] static void CPPUNIT_API fail( std::string message, 
+                                                            const SourceLine &sourceLine = SourceLine() );
 
   /*! \brief Throws a Exception with the specified message and location.
    * \param shouldFail if \c true then the exception is thrown. Otherwise
@@ -73,9 +73,9 @@ struct Asserter
    * \param message Message explaining the assertion failiure.
    * \param sourceLine Location of the assertion.
    */
-  static void CPPUNIT_API failIf( bool shouldFail, 
-                                  std::string message, 
-                                  const SourceLine &sourceLine = SourceLine() );
+  [[deprecated]] static void CPPUNIT_API failIf( bool shouldFail, 
+                                                 std::string message, 
+                                                 const SourceLine &sourceLine = SourceLine() );
 
   /*! \brief Returns a expected value string for a message, case equal than
    * Typically used to create 'not equal' message, or to check that a message
@@ -87,7 +87,7 @@ struct Asserter
    * \deprecated Use makeExpectedEqual instead
    * \see makeActual().
    */
-  static std::string CPPUNIT_API makeExpected( const std::string &expectedValue );
+  [[deprecated]] static std::string CPPUNIT_API makeExpected( const std::string &expectedValue );
   /*! \brief Returns a expected value string for a message, case equal than
    * Typically used to create 'not equal' message, or to check that a message
    * contains the expected content when writing unit tests for your custom 
@@ -141,10 +141,10 @@ struct Asserter
   /*!
    * \deprecated Use makeMessage instead
    */ 
-  static Message CPPUNIT_API makeNotEqualMessage( const std::string &expectedValue,
-                                                  const std::string &actualValue,
-                                                  const AdditionalMessage &additionalMessage = AdditionalMessage(),
-                                                  const std::string &shortDescription = "equality assertion failed");
+  [[deprecated]] static Message CPPUNIT_API makeNotEqualMessage( const std::string &expectedValue,
+                                                                 const std::string &actualValue,
+                                                                 const AdditionalMessage &additionalMessage = AdditionalMessage(),
+                                                                 const std::string &shortDescription = "equality assertion failed");
 
   static Message CPPUNIT_API makeMessage( const std::string &expectedValue,
                                                   const std::string &actualValue,
@@ -173,11 +173,11 @@ struct Asserter
    *                          what are the differences between the expected and actual value.
    * \param shortDescription Short description for the failure message.
    */
-  static void CPPUNIT_API failNotLess( std::string expected, 
-                                        std::string actual, 
-                                        const SourceLine &sourceLine,
-                                        const AdditionalMessage &additionalMessage = AdditionalMessage(),
-                                        std::string shortDescription = "less assertion failed" );
+  [[noreturn]] static void CPPUNIT_API failNotLess( std::string expected, 
+                                                    std::string actual, 
+                                                    const SourceLine &sourceLine,
+                                                    const AdditionalMessage &additionalMessage = AdditionalMessage(),
+                                                    std::string shortDescription = "less assertion failed" );
 
   /*! \brief Throws an Exception with the specified message and location.
    * \param expected Text describing the expected value.
@@ -187,11 +187,11 @@ struct Asserter
    *                          what are the differences between the expected and actual value.
    * \param shortDescription Short description for the failure message.
    */
-  static void CPPUNIT_API failNotGreater( std::string expected, 
-                                        std::string actual, 
-                                        const SourceLine &sourceLine,
-                                        const AdditionalMessage &additionalMessage = AdditionalMessage(),
-                                        std::string shortDescription = "greater assertion failed" );
+  [[noreturn]] static void CPPUNIT_API failNotGreater( std::string expected, 
+                                                       std::string actual, 
+                                                       const SourceLine &sourceLine,
+                                                       const AdditionalMessage &additionalMessage = AdditionalMessage(),
+                                                       std::string shortDescription = "greater assertion failed" );
 
   /*! \brief Throws an Exception with the specified message and location.
    * \param expected Text describing the expected value.
@@ -201,11 +201,11 @@ struct Asserter
    *                          what are the differences between the expected and actual value.
    * \param shortDescription Short description for the failure message.
    */
-  static void CPPUNIT_API failNotLessEqual( std::string expected, 
-                                        std::string actual, 
-                                        const SourceLine &sourceLine,
-                                        const AdditionalMessage &additionalMessage = AdditionalMessage(),
-                                        std::string shortDescription = "less equal assertion failed" );
+  [[noreturn]] static void CPPUNIT_API failNotLessEqual( std::string expected, 
+                                                         std::string actual, 
+                                                         const SourceLine &sourceLine,
+                                                         const AdditionalMessage &additionalMessage = AdditionalMessage(),
+                                                         std::string shortDescription = "less equal assertion failed" );
 
   /*! \brief Throws an Exception with the specified message and location.
    * \param expected Text describing the expected value.
@@ -215,11 +215,11 @@ struct Asserter
    *                          what are the differences between the expected and actual value.
    * \param shortDescription Short description for the failure message.
    */
-  static void CPPUNIT_API failNotGreaterEqual( std::string expected, 
-                                        std::string actual, 
-                                        const SourceLine &sourceLine,
-                                        const AdditionalMessage &additionalMessage = AdditionalMessage(),
-                                        std::string shortDescription = "greater equal assertion failed" );  /*! \brief Throws an Exception with the specified message and location.
+  [[noreturn]] static void CPPUNIT_API failNotGreaterEqual( std::string expected, 
+                                                            std::string actual, 
+                                                            const SourceLine &sourceLine,
+                                                            const AdditionalMessage &additionalMessage = AdditionalMessage(),
+                                                            std::string shortDescription = "greater equal assertion failed" );  /*! \brief Throws an Exception with the specified message and location.
 
    * \param shouldFail if \c true then the exception is thrown. Otherwise
    *                   nothing happen.

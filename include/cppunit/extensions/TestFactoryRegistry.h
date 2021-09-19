@@ -82,13 +82,13 @@ public:
   TestFactoryRegistry( std::string name );
 
   /// Destructor.
-  virtual ~TestFactoryRegistry();
+  virtual ~TestFactoryRegistry() override;
 
   /** Returns a new TestSuite that contains the registered test.
    * \return A new TestSuite which contains all the test added using 
    * registerFactory(TestFactory *).
    */
-  virtual Test *makeTest();
+  virtual Test *makeTest() override;
 
   /** Returns a named registry.
    *
@@ -152,8 +152,8 @@ public:
    * \param factory Factory to register. 
    * \deprecated Use registerFactory( TestFactory *) instead.
    */
-  void registerFactory( const std::string &name,
-                        TestFactory *factory );
+  [[deprecated]] void registerFactory( const std::string &name,
+                                       TestFactory *factory );
 
 private:
   TestFactoryRegistry( const TestFactoryRegistry &copy );

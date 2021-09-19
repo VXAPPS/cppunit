@@ -99,7 +99,7 @@ XmlElement::addElement( XmlElement *node )
 int 
 XmlElement::elementCount() const
 {
-  return m_elements.size();
+  return static_cast<int>( m_elements.size() );
 }
 
 
@@ -109,7 +109,7 @@ XmlElement::elementAt( int index ) const
   if ( index < 0  ||  index >= elementCount() )
     throw std::invalid_argument( "XmlElement::elementAt(), out of range index" );
 
-  return m_elements[ index ];
+  return m_elements[ static_cast<size_t>( index ) ];
 }
 
 
@@ -124,7 +124,6 @@ XmlElement::elementFor( const std::string &name ) const
   }
 
   throw std::invalid_argument( "XmlElement::elementFor(), not matching child element found" );
-  return nullptr;  // make some compilers happy.
 }
 
 

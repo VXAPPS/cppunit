@@ -50,14 +50,14 @@ TestSuite::getTests() const
 int 
 TestSuite::getChildTestCount() const
 {
-  return m_tests.size();
+  return static_cast<int>( m_tests.size() );
 }
 
 
 Test *
 TestSuite::doGetChildTestAt( int index ) const
 {
-  return m_tests[index];
+  return m_tests[static_cast<size_t>( index )];
 }
 
 

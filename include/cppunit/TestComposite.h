@@ -19,13 +19,13 @@ class CPPUNIT_API TestComposite : public Test
 public:
   TestComposite( const std::string &name = "" );
 
-  ~TestComposite();
+  ~TestComposite() override;
 
-  void run( TestResult *result );
+  void run( TestResult *result ) override;
 
-  int countTestCases() const;
+  int countTestCases() const override;
   
-  std::string getName() const;
+  std::string getName() const override;
 
 private:
   TestComposite( const TestComposite &other );

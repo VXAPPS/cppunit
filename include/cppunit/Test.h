@@ -25,7 +25,7 @@ class TestPath;
 class CPPUNIT_API Test
 {
 public:
-  virtual ~Test() {};
+  virtual ~Test() {}
 
   /*! \brief Run the test, collecting results.
    */

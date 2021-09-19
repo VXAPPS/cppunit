@@ -36,7 +36,7 @@ public:
 
   /*! Constructs a SynchronizedObject object.
    */
-  SynchronizedObject( SynchronizationObject *syncObject =0 );
+  SynchronizedObject( SynchronizationObject *syncObject = nullptr );
 
   /// Destructor.
   virtual ~SynchronizedObject();

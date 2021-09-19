@@ -15,7 +15,7 @@ public:
   {
   }
 
-  bool operator()() const
+  bool operator()() const override
   {
     return m_protector->protect( m_functor, m_context );
   }
@@ -60,7 +60,7 @@ ProtectorChain::pop()
 int 
 ProtectorChain::count() const
 {
-  return m_protectors.size();
+  return static_cast<int>( m_protectors.size() );
 }
 
 
@@ -72,7 +72,7 @@ ProtectorChain::protect( const Functor &functor,
     return functor();
 
   Functors functors;
-  for ( int index = m_protectors.size()-1; index >= 0; --index )
+  for ( size_t index = m_protectors.size()-1; index > 0; --index )
   {
     const Functor &protectedFunctor = 
               functors.empty() ? functor : *functors.back();

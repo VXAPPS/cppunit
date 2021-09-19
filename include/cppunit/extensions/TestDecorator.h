@@ -22,18 +22,18 @@ class CPPUNIT_API TestDecorator : public Test
 {
 public:
   TestDecorator( Test *test );
-  ~TestDecorator();
+  ~TestDecorator() override;
 
-  int countTestCases() const;
+  int countTestCases() const override;
 
-  std::string getName() const;
+  std::string getName() const override;
 
-  void run( TestResult *result );
+  void run( TestResult *result ) override;
 
-  int getChildTestCount() const;
+  int getChildTestCount() const override;
 
 protected:
-  Test *doGetChildTestAt( int index ) const;
+  Test *doGetChildTestAt( int index ) const override;
 
   Test *m_test;
 

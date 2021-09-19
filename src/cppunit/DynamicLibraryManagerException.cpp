@@ -28,7 +28,7 @@ DynamicLibraryManagerException::getCause() const
 
 
 const char *
-DynamicLibraryManagerException::what() const throw()
+DynamicLibraryManagerException::what() const noexcept
 {
   return m_message.c_str();
 }

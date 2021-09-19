@@ -78,7 +78,7 @@ Message::shortDescription() const
 int 
 Message::detailCount() const
 {
-  return m_details.size();
+  return static_cast<int>( m_details.size() );
 }
 
 
@@ -88,7 +88,7 @@ Message::detailAt( int index ) const
   if ( index < 0  ||  index >= detailCount() )
     throw std::invalid_argument( "Message::detailAt() : invalid index" );
 
-  return m_details[ index ];
+  return m_details[ static_cast<size_t>( index ) ];
 }
 
 

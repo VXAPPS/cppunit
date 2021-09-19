@@ -124,7 +124,7 @@ Asserter::failNotEqual( std::string expected,
 }
 
 
-void 
+[[noreturn]] void 
 Asserter::failNotLess( std::string expected, 
                         std::string actual, 
                         const SourceLine &sourceLine,
@@ -139,7 +139,7 @@ Asserter::failNotLess( std::string expected,
 }
 
 
-void 
+[[noreturn]] void 
 Asserter::failNotGreater( std::string expected, 
                         std::string actual, 
                         const SourceLine &sourceLine,
@@ -153,7 +153,7 @@ Asserter::failNotGreater( std::string expected,
         sourceLine );
 }
 
-void 
+[[noreturn]] void 
 Asserter::failNotLessEqual( std::string expected, 
                             std::string actual, 
                             const SourceLine &sourceLine,
@@ -167,7 +167,7 @@ Asserter::failNotLessEqual( std::string expected,
         sourceLine );
 }
 
-void 
+[[noreturn]] void 
 Asserter::failNotGreaterEqual( std::string expected, 
                             std::string actual, 
                             const SourceLine &sourceLine,

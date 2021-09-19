@@ -48,10 +48,10 @@ class CPPUNIT_API TestResult : protected SynchronizedObject
 {
 public:
   /// Construct a TestResult
-  TestResult( SynchronizationObject *syncObject = 0 );
+  TestResult( SynchronizationObject *syncObject = nullptr );
 
   /// Destroys a test result
-  virtual ~TestResult();
+  virtual ~TestResult() override;
 
   virtual void addListener( TestListener *listener );
 

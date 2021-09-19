@@ -33,20 +33,20 @@ class CPPUNIT_API TestPlugInDefaultImpl : public CppUnitTestPlugIn
 public:
   TestPlugInDefaultImpl();
 
-  virtual ~TestPlugInDefaultImpl();
+  virtual ~TestPlugInDefaultImpl() override;
 
   void initialize( TestFactoryRegistry *registry,
-                   const PlugInParameters &parameters );
+                   const PlugInParameters &parameters ) override;
 
-  void addListener( TestResult *eventManager );
+  void addListener( TestResult *eventManager ) override;
 
-  void removeListener( TestResult *eventManager );
+  void removeListener( TestResult *eventManager ) override;
 
-  void addXmlOutputterHooks( XmlOutputter *outputter );
+  void addXmlOutputterHooks( XmlOutputter *outputter ) override;
 
-  void removeXmlOutputterHooks();
+  void removeXmlOutputterHooks() override;
 
-  void uninitialize( TestFactoryRegistry *registry );
+  void uninitialize( TestFactoryRegistry *registry ) override;
 };
 
 

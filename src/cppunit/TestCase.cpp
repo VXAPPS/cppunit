@@ -27,7 +27,7 @@ public:
   {
   }
 
-  bool operator()() const
+  bool operator()() const override
   {
     (m_target->*m_method)();
     return true;
@@ -114,7 +114,7 @@ TestCase::runTest()
  *  This TestCase was intended for use by the TestCaller and should not
  *  be used by a test case for which run() is called.
  **/
-TestCase::TestCase()
+[[deprecated]] TestCase::TestCase()
     : m_name( "" )
 {
 }

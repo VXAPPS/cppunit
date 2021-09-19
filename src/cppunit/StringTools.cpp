@@ -36,8 +36,8 @@ StringTools::split( const std::string &text,
     std::string::const_iterator itSeparator = std::find( itStart, 
                                                          text.end(), 
                                                          separator );
-    splittedText.push_back( text.substr( itStart - text.begin(),
-                                         itSeparator - itStart ) );
+    splittedText.push_back( text.substr( static_cast<size_t>( itStart - text.begin() ),
+                                         static_cast<size_t>( itSeparator - itStart ) ) );
     if ( itSeparator == text.end() )
       break;
     itStart = itSeparator +1;
@@ -49,7 +49,7 @@ StringTools::split( const std::string &text,
 
 std::string 
 StringTools::wrap( const std::string &text,
-                   int wrapColumn )
+                   size_t wrapColumn )
 {
   const char lineBreak = '\n';
   Strings lines = split( text, lineBreak );
@@ -61,7 +61,7 @@ StringTools::wrap( const std::string &text,
       wrapped += lineBreak;
 
     const std::string &line = *it;
-    unsigned int index =0;
+    size_t index =0;
     while ( index < line.length() )
     {
       std::string lineSlice( line.substr( index, wrapColumn ) );

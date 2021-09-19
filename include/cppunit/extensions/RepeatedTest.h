@@ -25,9 +25,9 @@ public:
   {
   }
 
-  void run( TestResult *result );
+  void run( TestResult *result ) override;
 
-  int countTestCases() const;
+  int countTestCases() const override;
 
 private:
   RepeatedTest( const RepeatedTest & );

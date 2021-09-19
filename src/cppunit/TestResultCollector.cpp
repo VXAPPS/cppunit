@@ -68,7 +68,7 @@ int
 TestResultCollector::runTests() const
 { 
   ExclusiveZone zone( m_syncObject ); 
-  return m_tests.size(); 
+  return static_cast<int>( m_tests.size() ); 
 }
 
 
@@ -86,7 +86,7 @@ int
 TestResultCollector::testFailures() const
 { 
   ExclusiveZone zone( m_syncObject ); 
-  return m_failures.size() - m_testErrors;
+  return static_cast<int>( m_failures.size() ) - m_testErrors;
 }
 
 
@@ -95,7 +95,7 @@ int
 TestResultCollector::testFailuresTotal() const
 {
   ExclusiveZone zone( m_syncObject ); 
-  return m_failures.size();
+  return static_cast<int>( m_failures.size() );
 }
 
 

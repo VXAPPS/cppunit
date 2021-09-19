@@ -18,7 +18,7 @@ class DefaultProtector : public Protector
 {
 public:
   bool protect( const Functor &functor,
-                const ProtectorContext &context );
+                const ProtectorContext &context ) override;
 };
 
 CPPUNIT_NS_END

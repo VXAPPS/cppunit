@@ -41,13 +41,13 @@ public:
   Exception( const Exception &other );
 
   /// Destructs the exception
-  virtual ~Exception() throw();
+  virtual ~Exception() noexcept override;
 
   /// Performs an assignment
   Exception &operator =( const Exception &other );
 
   /// Returns descriptive message
-  const char *what() const throw();
+  const char *what() const noexcept override;
 
   /// Location where the error occured
   SourceLine sourceLine() const;

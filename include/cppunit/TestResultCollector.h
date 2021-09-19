@@ -37,15 +37,15 @@ public:
 
   /*! Constructs a TestResultCollector object.
    */
-  TestResultCollector( SynchronizationObject *syncObject = 0 );
+  TestResultCollector( SynchronizationObject *syncObject = nullptr );
 
   /// Destructor.
-  virtual ~TestResultCollector();
+  virtual ~TestResultCollector() override;
 
-  void startTest( Test *test );
-  void addFailure( const TestFailure &failure );
+  void startTest( Test *test ) override;
+  void addFailure( const TestFailure &failure ) override;
 
-  virtual void reset();
+  virtual void reset() override;
 
   virtual int runTests() const;
   virtual int testErrors() const;

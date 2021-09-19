@@ -68,7 +68,7 @@ public:
                      const std::string &locationFormat = CPPUNIT_COMPILER_LOCATION_FORMAT );
 
   /// Destructor.
-  virtual ~CompilerOutputter();
+  virtual ~CompilerOutputter() override;
 
   /*! \brief Sets the error location format.
    * 
@@ -79,7 +79,7 @@ public:
    * sequence are replaced:
    *
    * - "%l" => replaced by the line number
-   * - "%p" => replaced by the full path name of the file ("G:\prg\vc\cppunit\MyTest.cpp")
+   * - "%p" => replaced by the full path name of the file ("G:\prg\vc\\cppunit\MyTest.cpp")
    * - "%f" => replaced by the base name of the file ("MyTest.cpp")
    *
    * Some examples:
@@ -99,16 +99,16 @@ public:
    * \deprecated This class is specialized through parameterization instead of subclassing...
    *             Use CompilerOutputter::CompilerOutputter instead.
    */
-  static CompilerOutputter *defaultOutputter( TestResultCollector *result,
-                                              OStream &stream );
+  [[deprecated]] static CompilerOutputter *defaultOutputter( TestResultCollector *result,
+                                                             OStream &stream );
 
-  void write();
+  void write() override;
 
   void setNoWrap();
 
-  void setWrapColumn( int wrapColumn );
+  void setWrapColumn( size_t wrapColumn );
 
-  int wrapColumn() const;
+  size_t wrapColumn() const;
 
   virtual void printSuccess();
   virtual void printFailureReport();
@@ -136,7 +136,7 @@ private:
   TestResultCollector *m_result;
   OStream &m_stream;
   std::string m_locationFormat;
-  int m_wrapColumn;
+  size_t m_wrapColumn;
 };
 
 

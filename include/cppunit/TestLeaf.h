@@ -23,7 +23,7 @@ public:
    * \return 1.
    * \see Test::countTestCases().
    */
-  int countTestCases() const;
+  int countTestCases() const override;
 
   /*! Returns the number of child of this test case: 0.
    *
@@ -31,12 +31,12 @@ public:
    *
    * \return 0.
    */
-  int getChildTestCount() const;
+  int getChildTestCount() const override;
 
   /*! Always throws std::out_of_range.
    * \see Test::doGetChildTestAt().
    */
-  Test *doGetChildTestAt( int index ) const;
+  Test *doGetChildTestAt( int index ) const override;
 };
 
 CPPUNIT_NS_END

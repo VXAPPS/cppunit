@@ -72,7 +72,7 @@ CompilerOutputter::printFailuresList()
 {
   for ( int index =0; index < m_result->testFailuresTotal(); ++index)
   {
-    printFailureDetail( m_result->failures()[ index ] );
+    printFailureDetail( m_result->failures()[ static_cast<size_t>( index ) ] );
   }
 }
 
@@ -139,12 +139,12 @@ CompilerOutputter::processLocationFormatCommand( char command,
 std::string 
 CompilerOutputter::extractBaseName( const std::string &fileName ) const
 {
-  int indexLastDirectorySeparator = fileName.find_last_of( '/' );
+  size_t indexLastDirectorySeparator = fileName.find_last_of( '/' );
   
-  if ( indexLastDirectorySeparator < 0 )
+  if ( indexLastDirectorySeparator == std::string::npos )
     indexLastDirectorySeparator = fileName.find_last_of( '\\' );
   
-  if ( indexLastDirectorySeparator < 0 )
+  if ( indexLastDirectorySeparator == std::string::npos )
     return fileName;
 
   return fileName.substr( indexLastDirectorySeparator +1 );
@@ -193,7 +193,7 @@ CompilerOutputter::printStatistics()
 
 
 void 
-CompilerOutputter::setWrapColumn( int wrapColumn )
+CompilerOutputter::setWrapColumn( size_t wrapColumn )
 {
   m_wrapColumn = wrapColumn;
 }
@@ -206,7 +206,7 @@ CompilerOutputter::setNoWrap()
 }
 
 
-int 
+size_t 
 CompilerOutputter::wrapColumn() const
 {
   return m_wrapColumn;

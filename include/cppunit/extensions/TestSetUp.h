@@ -16,7 +16,7 @@ class CPPUNIT_API TestSetUp : public TestDecorator
 public:
   TestSetUp( Test *test );
 
-  void run( TestResult *result );
+  void run( TestResult *result ) override;
 
 protected:
   virtual void setUp();

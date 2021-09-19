@@ -19,14 +19,14 @@ public:
   TextTestProgressListener();
 
   /// Destructor.
-  virtual ~TextTestProgressListener();
+  virtual ~TextTestProgressListener() override;
 
-  void startTest( Test *test );
+  void startTest( Test *test ) override;
 
-  void addFailure( const TestFailure &failure );
+  void addFailure( const TestFailure &failure ) override;
 
   void endTestRun( Test *test, 
-                   TestResult *eventManager );
+                   TestResult *eventManager ) override;
 
 private:
   /// Prevents the use of the copy constructor.

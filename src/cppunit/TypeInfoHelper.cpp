@@ -17,12 +17,12 @@ TypeInfoHelper::getClassName( const std::type_info &info )
 #if defined(CPPUNIT_HAVE_GCC_ABI_DEMANGLE)  &&  CPPUNIT_HAVE_GCC_ABI_DEMANGLE
 
   int status = 0;
-  char* c_name = 0;
+  char* c_name = nullptr;
 
   const char* c_origName = info.name();
   if(c_origName[0] == '*')
       ++c_origName;
-  c_name = abi::__cxa_demangle( c_origName, 0, 0, &status ); 
+  c_name = abi::__cxa_demangle( c_origName, nullptr, nullptr, &status ); 
 
   std::string name;
   if(c_name)

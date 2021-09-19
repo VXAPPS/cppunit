@@ -32,13 +32,9 @@ public:
                                   const std::string &errorDetail,
                                   Cause cause );
 
-  ~DynamicLibraryManagerException() throw()
-  {
-  }
-
   Cause getCause() const;
 
-  const char *what() const throw();
+  const char *what() const noexcept override;
 
 private:
   std::string m_message;

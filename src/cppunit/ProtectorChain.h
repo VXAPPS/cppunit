@@ -21,7 +21,7 @@ class CPPUNIT_API ProtectorChain : public Protector
 public:
   ProtectorChain();
 
-  ~ProtectorChain();
+  ~ProtectorChain() override;
 
   void push( Protector *protector );
 
@@ -30,7 +30,7 @@ public:
   int count() const;
 
   bool protect( const Functor &functor,
-                const ProtectorContext &context );
+                const ProtectorContext &context ) override;
 
 private:
   class ProtectFunctor;

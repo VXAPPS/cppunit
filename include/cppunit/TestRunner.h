@@ -102,14 +102,14 @@ protected:
   public:
     WrappingSuite( const std::string &name = "All Tests" );
 
-    int getChildTestCount() const;
+    int getChildTestCount() const override;
 
-    std::string getName() const;
+    std::string getName() const override;
 
-    void run( TestResult *result );
+    void run( TestResult *result ) override;
 
   protected:
-    Test *doGetChildTestAt( int index ) const;
+    Test *doGetChildTestAt( int index ) const override;
 
     bool hasOnlyOneTest() const;
 

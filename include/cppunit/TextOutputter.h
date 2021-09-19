@@ -24,9 +24,9 @@ public:
                  OStream &stream );
 
   /// Destructor.
-  virtual ~TextOutputter();
+  virtual ~TextOutputter() override;
 
-  void write();
+  void write() override;
   virtual void printFailures();
   virtual void printHeader();
 

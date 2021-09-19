@@ -83,13 +83,13 @@ CPPUNIT_NS_BEGIN
 class CPPUNIT_API TestFixture
 {
 public:
-  virtual ~TestFixture() {};
+  virtual ~TestFixture() {}
 
   //! \brief Set up context before running a test.
-  virtual void setUp() {};
+  virtual void setUp() {}
 
   //! Clean up after the test run.
-  virtual void tearDown() {};
+  virtual void tearDown() {}
 };
 
 

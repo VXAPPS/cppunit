@@ -44,7 +44,7 @@ public:
    */
   TestSuite( std::string name = "" );
 
-  ~TestSuite();
+  ~TestSuite() override;
 
   /*! Adds the specified test to the suite.
    * \param test Test to add. Must not be \c nullptr.
@@ -56,15 +56,15 @@ public:
    *             TestComposite interface instead.
    * \return Reference on a vector that contains the tests of the suite.
    */
-  const std::vector<Test *> &getTests() const;
+  [[deprecated]] const std::vector<Test *> &getTests() const;
 
   /*! Destroys all the tests of the suite.
    */
   virtual void deleteContents();
 
-  int getChildTestCount() const;
+  int getChildTestCount() const override;
 
-  Test *doGetChildTestAt( int index ) const;
+  Test *doGetChildTestAt( int index ) const override;
 
 private:
   std::vector<Test *> m_tests;

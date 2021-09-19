@@ -75,6 +75,7 @@
 
 // If CPPUNIT_HAVE_CPP_CAST is defined, then c++ style cast will be used,
 // otherwise, C style cast are used.
+#define CPPUNIT_HAVE_CPP_CAST 1
 #if defined( CPPUNIT_HAVE_CPP_CAST )
 # define CPPUNIT_CONST_CAST( TargetType, pointer ) \
     const_cast<TargetType>( pointer )

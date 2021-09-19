@@ -44,7 +44,7 @@ Exception::Exception( std::string message,
 #endif
 
 
-Exception::~Exception() throw()
+Exception::~Exception() noexcept
 {
 }
 
@@ -68,7 +68,7 @@ Exception::operator =( const Exception& other )
 
 
 const char*
-Exception::what() const throw()
+Exception::what() const noexcept
 {
   Exception *mutableThis = CPPUNIT_CONST_CAST( Exception *, this );
   mutableThis->m_whatMessage = m_message.shortDescription() + "\n" + 

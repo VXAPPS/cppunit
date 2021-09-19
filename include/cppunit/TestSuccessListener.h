@@ -17,14 +17,14 @@ class CPPUNIT_API TestSuccessListener : public TestListener,
 public:
   /*! Constructs a TestSuccessListener object.
    */
-  TestSuccessListener( SynchronizationObject *syncObject = 0 );
+  TestSuccessListener( SynchronizationObject *syncObject = nullptr );
 
   /// Destructor.
-  virtual ~TestSuccessListener();
+  virtual ~TestSuccessListener() override;
 
   virtual void reset();
 
-  void addFailure( const TestFailure &failure );
+  void addFailure( const TestFailure &failure ) override;
 
   /// Returns whether the entire test was successful or not.
   virtual bool wasSuccessful() const;

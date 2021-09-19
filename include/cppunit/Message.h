@@ -34,7 +34,7 @@ CPPUNIT_NS_BEGIN
 class CPPUNIT_API Message
 {
 public:
-  Message() {};
+  Message() {}
 
   // Ensure thread-safe copy by detaching the string.
   Message( const Message &other );

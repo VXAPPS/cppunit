@@ -24,7 +24,7 @@ struct StringTools
                                     char separator );
 
   static std::string CPPUNIT_API wrap( const std::string &text,
-                                       int wrapColumn = CPPUNIT_WRAP_COLUMN );
+                                       size_t wrapColumn = CPPUNIT_WRAP_COLUMN );
 
 };
 

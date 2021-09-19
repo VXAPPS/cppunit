@@ -18,13 +18,13 @@ public:
   BriefTestProgressListener();
 
   /// Destructor.
-  virtual ~BriefTestProgressListener();
+  virtual ~BriefTestProgressListener() override;
 
-  void startTest( Test *test );
+  void startTest( Test *test ) override;
 
-  void addFailure( const TestFailure &failure );
+  void addFailure( const TestFailure &failure ) override;
 
-  void endTest( Test *test );
+  void endTest( Test *test ) override;
 
 private:
   /// Prevents the use of the copy constructor.

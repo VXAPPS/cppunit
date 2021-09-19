@@ -5,7 +5,7 @@ CPPUNIT_NS_BEGIN
 
 
 SynchronizedObject::SynchronizedObject( SynchronizationObject *syncObject )
-    : m_syncObject( syncObject == 0 ? new SynchronizationObject() : 
+    : m_syncObject( syncObject == nullptr ? new SynchronizationObject() : 
                                       syncObject )
 {
 }

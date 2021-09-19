@@ -49,7 +49,7 @@ public:
                 const std::string& encoding = std::string("ISO-8859-1") );
 
   /// Destructor.
-  virtual ~XmlOutputter();
+  virtual ~XmlOutputter() override;
 
   /*! \brief Adds the specified hook to the outputter.
    * \param hook Hook to add. Must not be \c nullptr.
@@ -66,7 +66,7 @@ public:
    * Refer to examples/cppunittest/XmlOutputterTest.cpp for example
    * of use and XML document structure.
    */
-  virtual void write();
+  virtual void write() override;
 
   /*! \brief Sets the XSL style sheet used.
    *
