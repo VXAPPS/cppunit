@@ -47,7 +47,7 @@ public:
 
   /*! \brief Adds a test to the fixture suite.
    *
-   * \param test Test to add to the fixture suite. Must not be \c NULL.
+   * \param test Test to add to the fixture suite. Must not be \c nullptr.
    */
   void addTest( Test *test );
 

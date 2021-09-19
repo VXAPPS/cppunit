@@ -34,8 +34,8 @@ MockTestListener::MockTestListener( std::string name )
     , m_hasParametersExpectationForAddFailure( false )
     , m_expectedAddFailureCallCount( 0 )
     , m_addFailureCall( 0 )
-    , m_expectedFailedTest( NULL )
-    , m_expectedException( NULL )
+    , m_expectedFailedTest( nullptr )
+    , m_expectedException( nullptr )
     , m_expectedIsError( false )
 {
 }

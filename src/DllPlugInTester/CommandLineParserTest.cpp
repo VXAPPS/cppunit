@@ -17,7 +17,7 @@ CommandLineParserTest::~CommandLineParserTest()
 void 
 CommandLineParserTest::setUp()
 {
-  _parser = NULL;
+  _parser = nullptr;
 }
 
 
@@ -32,7 +32,7 @@ void
 CommandLineParserTest::parse( const char **lines )
 {
   int count =0;
-  for ( const char **line = lines; *line != NULL; ++line, ++count )
+  for ( const char **line = lines; *line != nullptr; ++line, ++count )
       ;
 
   delete _parser;
@@ -44,7 +44,7 @@ CommandLineParserTest::parse( const char **lines )
 void 
 CommandLineParserTest::testEmptyCommandLine()
 {
-  static const char *lines[] = { "", NULL };
+  static const char *lines[] = { "", nullptr };
   parse( lines );
 
   std::string none;
@@ -64,7 +64,7 @@ CommandLineParserTest::testEmptyCommandLine()
 void 
 CommandLineParserTest::testFlagCompiler()
 {
-  static const char *lines[] = { "", "-c", NULL };
+  static const char *lines[] = { "", "-c", nullptr };
   parse( lines );
 
   std::string none;
@@ -85,7 +85,7 @@ CommandLineParserTest::testFlagCompiler()
 void 
 CommandLineParserTest::testLongFlagBriefProgress()
 {
-  static const char *lines[] = { "", "--brief-progress", NULL };
+  static const char *lines[] = { "", "--brief-progress", nullptr };
   parse( lines );
 
   std::string none;
@@ -106,7 +106,7 @@ CommandLineParserTest::testLongFlagBriefProgress()
 void 
 CommandLineParserTest::testFileName()
 {
-  static const char *lines[] = { "", "TestPlugIn.dll", NULL };
+  static const char *lines[] = { "", "TestPlugIn.dll", nullptr };
   parse( lines );
 
   std::string none;
@@ -132,7 +132,7 @@ CommandLineParserTest::testFileName()
 void 
 CommandLineParserTest::testTestPath()
 {
-  static const char *lines[] = { "", ":Core", NULL };
+  static const char *lines[] = { "", ":Core", nullptr };
   parse( lines );
 
   std::string none;
@@ -153,7 +153,7 @@ CommandLineParserTest::testTestPath()
 void 
 CommandLineParserTest::testParameterWithSpace()
 {
-  static const char *lines[] = { "", "--xml", "Test Results.xml", NULL };
+  static const char *lines[] = { "", "--xml", "Test Results.xml", nullptr };
   parse( lines );
 
   std::string none;
@@ -175,7 +175,7 @@ CommandLineParserTest::testParameterWithSpace()
 void 
 CommandLineParserTest::testMissingStyleSheetParameterThrow()
 {
-  static const char *lines[] = { "", "--xsl", NULL };
+  static const char *lines[] = { "", "--xsl", nullptr };
   parse( lines );
 }
 
@@ -183,7 +183,7 @@ CommandLineParserTest::testMissingStyleSheetParameterThrow()
 void 
 CommandLineParserTest::testMissingEncodingParameterThrow()
 {
-  static const char *lines[] = { "", "--encoding", NULL };
+  static const char *lines[] = { "", "--encoding", nullptr };
   parse( lines );
 }
 
@@ -191,7 +191,7 @@ CommandLineParserTest::testMissingEncodingParameterThrow()
 void 
 CommandLineParserTest::testXmlFileNameIsOptional()
 {
-  static const char *lines[] = { "", "--xml", NULL };
+  static const char *lines[] = { "", "--xml", nullptr };
   parse( lines );
 
   std::string none;
@@ -203,7 +203,7 @@ void
 CommandLineParserTest::testPlugInsWithParameters()
 {
   static const char *lines[] = { "", "TestPlugIn1.dll=login = lain",
-                           "Clocker.dll", NULL };
+                           "Clocker.dll", nullptr };
   parse( lines );
 
   CPPUNIT_ASSERT_EQUAL( 2, _parser->getPlugInCount() );

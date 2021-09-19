@@ -52,7 +52,7 @@ public:
   virtual ~XmlOutputter();
 
   /*! \brief Adds the specified hook to the outputter.
-   * \param hook Hook to add. Must not be \c NULL.
+   * \param hook Hook to add. Must not be \c nullptr.
    */
   virtual void addHook( XmlOutputterHook *hook );
 

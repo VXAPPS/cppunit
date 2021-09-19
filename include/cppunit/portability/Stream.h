@@ -199,7 +199,7 @@ public:
 
    OStream &operator <<( const char *v )
    {
-      return write( v ? v : "NULL" );
+      return write( v ? v : "nullptr" );
    }
 
    OStream &operator <<( char c )

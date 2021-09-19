@@ -51,7 +51,7 @@ public:
    * You should override doGetChildTestAt() method.
    * 
    * \param index Zero based index of the child test to return.
-   * \return Pointer on the test. Never \c NULL.
+   * \return Pointer on the test. Never \c nullptr.
    * \exception std::out_of_range is \a index is < 0 or >= getChildTestCount().
    */
   virtual Test *getChildTestAt( int index ) const;
@@ -83,7 +83,7 @@ public:
 
   /*! \brief Finds the test with the specified name in the hierarchy.
    * \param testName Name of the test to find.
-   * \return Pointer on the first test found that is named \a testName. Never \c NULL.
+   * \return Pointer on the first test found that is named \a testName. Never \c nullptr.
    * \exception std::invalid_argument if no test named \a testName is found.
    */
   virtual Test *findTest( const std::string &testName ) const;
@@ -105,7 +105,7 @@ protected:
 
   /*! \brief Returns the child test of the specified valid index.
    * \param index Zero based valid index of the child test to return.
-   * \return Pointer on the test. Never \c NULL.
+   * \return Pointer on the test. Never \c nullptr.
    */
   virtual Test *doGetChildTestAt( int index ) const =0;
 };

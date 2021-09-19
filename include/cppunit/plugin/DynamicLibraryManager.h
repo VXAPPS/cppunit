@@ -49,7 +49,7 @@ public:
 
   /*! \brief Returns a pointer on the specified symbol exported by the library.
    * \param symbol Name of the symbol exported by the library.
-   * \return Pointer on the symbol. Should be casted to the actual type. Never \c NULL.
+   * \return Pointer on the symbol. Should be casted to the actual type. Never \c nullptr.
    * \exception DynamicLibraryManagerException if the symbol is not found.
    */
   Symbol findSymbol( const std::string &symbol );
@@ -72,14 +72,14 @@ private:
    * 
    * May throw any exceptions (indicates failure).
    * \param libraryName Name of the library to load.
-   * \return Handle of the loaded library. \c NULL indicates failure.
+   * \return Handle of the loaded library. \c nullptr indicates failure.
    */
   LibraryHandle doLoadLibrary( const std::string &libraryName );
 
   /*! Releases the loaded library.
    *
    * The handle of the library to free is in \c m_libraryHandle. It is never
-   * \c NULL.
+   * \c nullptr.
    * \warning Must NOT throw any exceptions (called from destructor).
    */
   void doReleaseLibrary();
@@ -88,7 +88,7 @@ private:
    * 
    * May throw any exceptions (indicates failure).
    * \param symbol Name of the symbol exported by the library.
-   * \return Pointer on the symbol. \c NULL indicates failure.
+   * \return Pointer on the symbol. \c nullptr indicates failure.
    */
   Symbol doFindSymbol( const std::string &symbol );
 

@@ -8,7 +8,7 @@ class DumperPlugIn : public CppUnitTestPlugIn
 {
 public:
   DumperPlugIn()
-    : m_dumper( NULL )
+    : m_dumper( nullptr )
   {
   }
 

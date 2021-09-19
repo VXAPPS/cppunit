@@ -47,7 +47,7 @@ public:
   ~TestSuite();
 
   /*! Adds the specified test to the suite.
-   * \param test Test to add. Must not be \c NULL.
+   * \param test Test to add. Must not be \c nullptr.
     */
   void addTest( Test *test );
 

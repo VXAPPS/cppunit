@@ -85,7 +85,7 @@ PlugInManager::unload( PlugInInfo &plugIn )
   catch (...)
   {
     delete plugIn.m_manager;
-    plugIn.m_manager = NULL;
+    plugIn.m_manager = nullptr;
     throw;
   }
 }

@@ -1,18 +1,18 @@
 #include "TrackedTestCase.h"
 
-Tracker *TrackedTestCase::ms_tracker = NULL;
+Tracker *TrackedTestCase::ms_tracker = nullptr;
 
 TrackedTestCase::TrackedTestCase()
 : CPPUNIT_NS::TestCase( "" )
 {
-  if ( ms_tracker != NULL )
+  if ( ms_tracker != nullptr )
     ms_tracker->onConstructor();
 }
 
 
 TrackedTestCase::~TrackedTestCase()
 {
-  if ( ms_tracker != NULL )
+  if ( ms_tracker != nullptr )
     ms_tracker->onDestructor();
 }
 
@@ -20,7 +20,7 @@ TrackedTestCase::~TrackedTestCase()
 void 
 TrackedTestCase::setUp()
 {
-  if ( ms_tracker != NULL )
+  if ( ms_tracker != nullptr )
     ms_tracker->onSetUp();
 }
 
@@ -28,7 +28,7 @@ TrackedTestCase::setUp()
 void 
 TrackedTestCase::tearDown()
 {
-  if ( ms_tracker != NULL )
+  if ( ms_tracker != nullptr )
     ms_tracker->onTearDown();
 }
 
@@ -36,7 +36,7 @@ TrackedTestCase::tearDown()
 void 
 TrackedTestCase::test()
 {
-  if ( ms_tracker != NULL )
+  if ( ms_tracker != nullptr )
     ms_tracker->onTest();
 }
 
@@ -51,5 +51,5 @@ TrackedTestCase::setTracker( Tracker *tracker )
 void 
 TrackedTestCase::removeTracker()
 {
-  ms_tracker = NULL;
+  ms_tracker = nullptr;
 }

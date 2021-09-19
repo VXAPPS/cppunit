@@ -29,7 +29,7 @@ TestFailure::failedTest() const
 }
 
 
-/// Gets the thrown exception. Never \c NULL.
+/// Gets the thrown exception. Never \c nullptr.
 Exception *
 TestFailure::thrownException() const
 { 

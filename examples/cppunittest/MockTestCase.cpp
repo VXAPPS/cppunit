@@ -20,7 +20,7 @@ MockTestCase::MockTestCase( std::string name )
     , m_setUpThrow( false )
     , m_tearDownThrow( false )
     , m_runTestThrow( false )
-    , m_passingTest( NULL )
+    , m_passingTest( nullptr )
 {
 }
 

@@ -12,9 +12,9 @@ class ClockerPlugIn : public CppUnitTestPlugIn
 {
 public:
   ClockerPlugIn()
-    : m_dumper( NULL )
-    , m_model( NULL )
-    , m_xmlHook( NULL )
+    : m_dumper( nullptr )
+    , m_model( nullptr )
+    , m_xmlHook( nullptr )
   {
   }
 
