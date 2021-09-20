@@ -79,12 +79,12 @@ public:
    * sequence are replaced:
    *
    * - "%l" => replaced by the line number
-   * - "%p" => replaced by the full path name of the file ("G:\prg\vc\\cppunit\MyTest.cpp")
+   * - "%p" => replaced by the full path name of the file ("G:\\prg\\vc\\cppunit\\MyTest.cpp")
    * - "%f" => replaced by the base name of the file ("MyTest.cpp")
    *
    * Some examples:
    *
-   * - VC++ error location format: "%p(%l):" => produce "G:\prg\MyTest.cpp(43):"
+   * - VC++ error location format: "%p(%l):" => produce "G:\\prg\\MyTest.cpp(43):"
    * - GCC error location format: "%f:%l:" => produce "MyTest.cpp:43:"
    * 
    * Thoses are the two compilers currently <em>supported</em> (gcc format is used if

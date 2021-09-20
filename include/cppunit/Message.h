@@ -24,12 +24,12 @@ CPPUNIT_NS_BEGIN
  *  The short description is used to indicate how the detail strings should be
  *  interpreted. It usually indicates the failure types, such as
  *  "assertion failed", "forced failure", "unexpected exception caught",
- *  "equality assertion failed"... It should not contains new line character (\n).
+ *  "equality assertion failed"... It should not contains new line character (\\n).
  *
  *  Detail strings are used to provide more information about the failure. It
  *  can contains the asserted expression, the expected and actual values in an
  *  equality assertion, some addional messages... Detail strings can contains
- *  new line characters (\n).
+ *  new line characters (\\n).
  */
 class CPPUNIT_API Message
 {
@@ -84,7 +84,7 @@ public:
    * // "- Expected: 3\n- Actual: 7\n"  \endcode
    *
    * \return A string that is a concatenation of all the detail strings. Each detail
-   *         string is prefixed with '- ' and suffixed with '\n' before being
+   *         string is prefixed with '- ' and suffixed with '\\n' before being
    *         concatenated to the other.
    */
   std::string details() const;
