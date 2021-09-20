@@ -118,10 +118,10 @@
  * const char *name = CPPUNIT_STRINGIZE( CPPUNIT_PLUGIN_EXPORTED_NAME );
  * \endcode
  */
-#define CPPUNIT_STRINGIZE( symbol ) _CPPUNIT_DO_STRINGIZE( symbol )
+#define CPPUNIT_STRINGIZE( symbol ) CPPUNIT_DO_STRINGIZE( symbol )
 
 /// \internal
-#define _CPPUNIT_DO_STRINGIZE( symbol ) #symbol
+#define CPPUNIT_DO_STRINGIZE( symbol ) #symbol
 
 /*! Joins to symbol after expanding them into string.
  *
@@ -141,13 +141,13 @@
  * is that macro expansion of macro arguments does not
  * occur in CPPUNIT_JOIN2 but does in CPPUNIT_JOIN.
  */
-#define CPPUNIT_JOIN( symbol1, symbol2 ) _CPPUNIT_DO_JOIN( symbol1, symbol2 )
+#define CPPUNIT_JOIN( symbol1, symbol2 ) CPPUNIT_DO_JOIN( symbol1, symbol2 )
 
 /// \internal
-#define _CPPUNIT_DO_JOIN( symbol1, symbol2 ) _CPPUNIT_DO_JOIN2( symbol1, symbol2 )
+#define CPPUNIT_DO_JOIN( symbol1, symbol2 ) CPPUNIT_DO_JOIN2( symbol1, symbol2 )
 
 /// \internal
-#define _CPPUNIT_DO_JOIN2( symbol1, symbol2 ) symbol1##symbol2
+#define CPPUNIT_DO_JOIN2( symbol1, symbol2 ) symbol1##symbol2
 
 /// \internal Unique suffix for variable name. Can be overridden in platform specific
 /// config-*.h. Default to line number.
