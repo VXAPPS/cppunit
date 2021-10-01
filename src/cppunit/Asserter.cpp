@@ -7,7 +7,7 @@ CPPUNIT_NS_BEGIN
 
 
 // coverity[+kill]
-void 
+[[noreturn]] void
 Asserter::fail( std::string message, 
                 const SourceLine &sourceLine )
 {
@@ -15,7 +15,7 @@ Asserter::fail( std::string message,
 }
 
 // coverity[+kill]
-void 
+[[noreturn]] void
 Asserter::fail( const Message &message, 
                 const SourceLine &sourceLine )
 {
@@ -23,7 +23,7 @@ Asserter::fail( const Message &message,
 }
 
 
-void 
+void
 Asserter::failIf( bool shouldFail, 
                   const Message &message, 
                   const SourceLine &sourceLine )
@@ -33,7 +33,7 @@ Asserter::failIf( bool shouldFail,
 }
 
 
-void 
+void
 Asserter::failIf( bool shouldFail, 
                   std::string message, 
                   const SourceLine &sourceLine )
@@ -77,7 +77,7 @@ Asserter::makeExpectedGreaterEqual( const std::string& expectedValue )
     return "Expected greater or equal than: " + expectedValue;
 }
 
-std::string 
+std::string
 Asserter::makeActual( const std::string &actualValue )
 {
   return "Actual  : " + actualValue;
@@ -99,7 +99,7 @@ Asserter::makeMessage( const std::string& expectedMessage,
 }
 
 
-Message 
+Message
 Asserter::makeNotEqualMessage( const std::string &expectedValue,
                                const std::string &actualValue,
                                const AdditionalMessage &additionalMessage,
@@ -109,7 +109,7 @@ Asserter::makeNotEqualMessage( const std::string &expectedValue,
 }
 
 
-void 
+void
 Asserter::failNotEqual( std::string expected, 
                         std::string actual, 
                         const SourceLine &sourceLine,
@@ -124,7 +124,7 @@ Asserter::failNotEqual( std::string expected,
 }
 
 
-[[noreturn]] void 
+[[noreturn]] void
 Asserter::failNotLess( std::string expected, 
                         std::string actual, 
                         const SourceLine &sourceLine,
@@ -139,7 +139,7 @@ Asserter::failNotLess( std::string expected,
 }
 
 
-[[noreturn]] void 
+[[noreturn]] void
 Asserter::failNotGreater( std::string expected, 
                         std::string actual, 
                         const SourceLine &sourceLine,
@@ -153,7 +153,7 @@ Asserter::failNotGreater( std::string expected,
         sourceLine );
 }
 
-[[noreturn]] void 
+[[noreturn]] void
 Asserter::failNotLessEqual( std::string expected, 
                             std::string actual, 
                             const SourceLine &sourceLine,
@@ -167,7 +167,7 @@ Asserter::failNotLessEqual( std::string expected,
         sourceLine );
 }
 
-[[noreturn]] void 
+[[noreturn]] void
 Asserter::failNotGreaterEqual( std::string expected, 
                             std::string actual, 
                             const SourceLine &sourceLine,
@@ -180,7 +180,7 @@ Asserter::failNotGreaterEqual( std::string expected,
                      additionalMessage ), 
         sourceLine );
 }
-void 
+void
 Asserter::failNotEqualIf( bool shouldFail,
                           std::string expected, 
                           std::string actual, 

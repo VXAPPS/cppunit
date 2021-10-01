@@ -47,9 +47,6 @@
 # define CPPUNIT_COMPILER_LOCATION_FORMAT "%p(%l):"
 #endif
 
-// Define to 1 if the compiler support C++ style cast.
-#define CPPUNIT_HAVE_CPP_CAST 1
-
 /* define to 1 if the compiler has _finite() */
 #ifndef CPPUNIT_HAVE__FINITE
 #define CPPUNIT_HAVE__FINITE 1 

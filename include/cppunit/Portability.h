@@ -73,22 +73,6 @@
 #endif
 #endif
 
-// If CPPUNIT_HAVE_CPP_CAST is defined, then c++ style cast will be used,
-// otherwise, C style cast are used.
-#define CPPUNIT_HAVE_CPP_CAST 1
-#if defined( CPPUNIT_HAVE_CPP_CAST )
-# define CPPUNIT_CONST_CAST( TargetType, pointer ) \
-    const_cast<TargetType>( pointer )
-
-# define CPPUNIT_STATIC_CAST( TargetType, pointer ) \
-    static_cast<TargetType>( pointer )
-#else // defined( CPPUNIT_HAVE_CPP_CAST )
-# define CPPUNIT_CONST_CAST( TargetType, pointer ) \
-    ((TargetType)( pointer ))
-# define CPPUNIT_STATIC_CAST( TargetType, pointer ) \
-    ((TargetType)( pointer ))
-#endif // defined( CPPUNIT_HAVE_CPP_CAST )
-
 // If CPPUNIT_NO_STD_NAMESPACE is defined then STL are in the global space.
 // => Define macro 'std' to nothing
 #if defined(CPPUNIT_NO_STD_NAMESPACE)

@@ -135,7 +135,7 @@ public:
    */
   FixtureType *makeFixture() const
   {
-    return CPPUNIT_STATIC_CAST( FixtureType *, 
+    return static_cast<FixtureType*>(
                                 TestSuiteBuilderContextBase::makeTestFixture() );
   }
 };

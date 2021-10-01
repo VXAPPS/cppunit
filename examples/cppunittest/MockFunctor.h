@@ -23,7 +23,7 @@ public:
 
   bool operator()() const
   {
-    ++CPPUNIT_CONST_CAST(MockFunctor *,this)->m_actualCallCount;
+    ++const_cast<MockFunctor*>( this )->m_actualCallCount;
 
     if ( m_shouldThrow )
     {

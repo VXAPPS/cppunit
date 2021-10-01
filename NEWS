@@ -1,4 +1,14 @@
-  New in CppUnit 1.15.0:
+  New in CppUnit 1.15.2:
+  ---------------------
+
+* Portability:
+
+  - Use more C++11 features and remove old and deprecated
+    C++ language features
+
+  - Fix a few compiler warnings
+
+  New in CppUnit 1.15.1:
   ---------------------
 
 * Portability:

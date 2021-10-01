@@ -22,7 +22,7 @@ TypeInfoHelper::getClassName( const std::type_info &info )
   const char* c_origName = info.name();
   if(c_origName[0] == '*')
       ++c_origName;
-  c_name = abi::__cxa_demangle( c_origName, nullptr, nullptr, &status ); 
+  c_name = abi::__cxa_demangle( c_origName, nullptr, nullptr, &status );
 
   std::string name;
   if(c_name)

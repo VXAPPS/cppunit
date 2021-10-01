@@ -125,7 +125,7 @@ public:
    * \param test Test that is going to be run.
    * \param eventManager Event manager used for the test run.
    */
-  virtual void startTestRun( Test *test, 
+  virtual void startTestRun( Test *test,
                              TestResult *eventManager ) { ( void )test; ( void )eventManager; }
 
   /*! \brief Called by a TestRunner after running the test.
@@ -136,7 +136,7 @@ public:
    * \param test Test that was run.
    * \param eventManager Event manager used for the test run.
    */
-  virtual void endTestRun( Test * test, 
+  virtual void endTestRun( Test * test,
                            TestResult *eventManager ) { ( void )test; ( void )eventManager; }
 };
 

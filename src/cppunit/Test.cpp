@@ -19,7 +19,7 @@ Test *
 Test::findTest( const std::string &testName ) const
 {
   TestPath path;
-  Test *mutableThis = CPPUNIT_CONST_CAST( Test *, this );
+  Test *mutableThis = const_cast<Test*>( this );
   mutableThis->findTestPath( testName, path );
   if ( !path.isValid() )
     throw std::invalid_argument( "No test named <" + testName + "> found in test <"
@@ -32,7 +32,7 @@ bool
 Test::findTestPath( const std::string &testName,
                     TestPath &testPath ) const
 {
-  Test *mutableThis = CPPUNIT_CONST_CAST( Test *, this );
+  Test *mutableThis = const_cast<Test*>( this );
   if ( getName() == testName )
   {
     testPath.add( mutableThis );
@@ -57,7 +57,7 @@ bool
 Test::findTestPath( const Test *test,
                     TestPath &testPath ) const
 {
-  Test *mutableThis = CPPUNIT_CONST_CAST( Test *, this );
+  Test *mutableThis = const_cast<Test*>( this );
   if ( this == test )
   {
     testPath.add( mutableThis );
@@ -81,7 +81,7 @@ Test::findTestPath( const Test *test,
 TestPath 
 Test::resolveTestPath( const std::string &testPath ) const
 {
-  Test *mutableThis = CPPUNIT_CONST_CAST( Test *, this );
+  Test *mutableThis = const_cast<Test*>( this );
   return TestPath( mutableThis, testPath );
 }
 
